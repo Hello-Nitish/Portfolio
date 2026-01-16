@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Nitish Kumar P</title>
+    <meta name="description"
+        content="Resume of Nitish Kumar P. Download PDF version or view professional summary, education, and experience.">
+    <meta property="og:title" content="Resume | Nitish Kumar P">
+    <meta property="og:description"
+        content="Resume of Nitish Kumar P. Download PDF version or view professional summary, education, and experience.">
+    <meta property="og:image" content="assets/profile-new.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://hello-nitish.github.io/resume.html">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Nitish Kumar P, Resume, CV, Download Resume, Professional Summary, Video Resume">
+    <meta name="author" content="Nitish Kumar P">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hello-nitish.github.io/resume.html">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hello-nitish.github.io/resume.html">
+    <meta property="twitter:title" content="Resume | Nitish Kumar P">
+    <meta property="twitter:description"
+        content="Resume of Nitish Kumar P. Download PDF version or view professional summary, education, and experience.">
+    <meta property="twitter:image" content="https://hello-nitish.github.io/assets/profile-new.png">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Interactive Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">NK.</a>
+
+    <!-- Floating Search Button (Mobile) -->
+    <a href="blogs.html" class="floating-search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </a>
+
+    <!-- Floating Dock Navigation -->
+    <div id="navigation-container"></div>
+
+    <!-- Video Resume Section -->
+    <section class="container reveal">
+        <h1 class="section-title typewriter">Video Introduction</h1>
+        <div class="glass-card" style="padding: 1rem;">
+            <div class="video-wrapper"
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000;">
+                <!-- Interactive Video Player UI -->
+                <a href="https://drive.google.com/drive/folders/1Ond2t-hbs8oHIHkdQQCJt3tkXtNkH7Me?usp=sharing"
+                    target="_blank" class="video-player-link"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; text-decoration: none; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);">
+
+                    <!-- Animated Background Particles -->
+                    <div style="position: absolute; inset: 0; overflow: hidden; opacity: 0.3;">
+                        <div
+                            style="position: absolute; width: 4px; height: 4px; background: #38bdf8; border-radius: 50%; top: 20%; left: 30%; animation: float 3s ease-in-out infinite;">
+                        </div>
+                        <div
+                            style="position: absolute; width: 6px; height: 6px; background: #a855f7; border-radius: 50%; top: 60%; left: 70%; animation: float 4s ease-in-out infinite 1s;">
+                        </div>
+                        <div
+                            style="position: absolute; width: 3px; height: 3px; background: #22d3ee; border-radius: 50%; top: 40%; left: 50%; animation: float 2.5s ease-in-out infinite 0.5s;">
+                        </div>
+                    </div>
+
+                    <!-- Center Play Button with Pulse -->
+                    <div style="position: relative; display: flex; align-items: center; justify-content: center;">
+                        <div
+                            style="position: absolute; width: 100px; height: 100px; background: rgba(56, 189, 248, 0.2); border-radius: 50%; animation: pulse 2s ease-in-out infinite;">
+                        </div>
+                        <div
+                            style="position: absolute; width: 80px; height: 80px; background: rgba(56, 189, 248, 0.3); border-radius: 50%; animation: pulse 2s ease-in-out infinite 0.3s;">
+                        </div>
+                        <div
+                            style="width: 70px; height: 70px; background: linear-gradient(135deg, #38bdf8, #a855f7); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(56, 189, 248, 0.5); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" style="margin-left: 4px;">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Text -->
+                    <p
+                        style="margin: 1.5rem 0 0 0; font-size: 1.1rem; opacity: 0.9; font-weight: 500; letter-spacing: 0.5px;">
+                        Click to Watch Video Resume</p>
+
+                    <!-- Video Controls Bar -->
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; flex-direction: column; gap: 8px;">
+
+                        <!-- Progress Bar -->
+                        <div
+                            style="width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; cursor: pointer;">
+                            <div
+                                style="width: 35%; height: 100%; background: linear-gradient(90deg, #38bdf8, #a855f7); border-radius: 2px; position: relative;">
+                                <div
+                                    style="position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; background: #fff; border-radius: 50%; box-shadow: 0 0 6px rgba(0,0,0,0.3);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls Row -->
+                        <div style="display: flex; align-items: center; justify-content: space-between; opacity: 0.9;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <!-- Play/Pause -->
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                <!-- Skip -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff"
+                                    stroke-width="2">
+                                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                                </svg>
+                                <!-- Volume -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff"
+                                    stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                                </svg>
+                                <!-- Time -->
+                                <span
+                                    style="font-size: 12px; font-family: monospace; color: rgba(255,255,255,0.8);">1:24
+                                    / 4:05</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <!-- Settings -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                    </path>
+                                </svg>
+                                <!-- Fullscreen -->
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff"
+                                    stroke-width="2">
+                                    <path
+                                        d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        @keyframes pulse {
+
+                            0%,
+                            100% {
+                                transform: scale(1);
+                                opacity: 1;
+                            }
+
+                            50% {
+                                transform: scale(1.3);
+                                opacity: 0;
+                            }
+                        }
+
+                        @keyframes float {
+
+                            0%,
+                            100% {
+                                transform: translateY(0) translateX(0);
+                            }
+
+                            50% {
+                                transform: translateY(-20px) translateX(10px);
+                            }
+                        }
+
+                        .video-player-link:hover div[style*="width: 70px"] {
+                            transform: scale(1.1);
+                            box-shadow: 0 0 50px rgba(56, 189, 248, 0.7);
+                        }
+                    </style>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Resume Section -->
+    <section class="container reveal" style="margin-top: 4rem;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+            <h2 class="section-title" style="margin-bottom: 0;">Professional Resume</h2>
+            <a href="https://drive.google.com/file/d/1VUaoVwltydt-Jg4z1M8ItV0Jd4PHZTeG/view?usp=sharing" target="_blank"
+                class="skill-pill"
+                style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.2); border-color: rgba(56, 189, 248, 0.4); color: white;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download PDF
+            </a>
+        </div>
+
+        <div class="glass-card resume-content">
+            <!-- Summary -->
+            <div class="resume-section">
+                <h3 class="typewriter">Summary</h3>
+                <p>PGDM Candidate (2025-2027) with a B.Tech in AI & Data Science. Experienced in Data Science
+                    internships, combining technical expertise in Machine Learning with strategic business acumen.</p>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+            <!-- Education -->
+            <div class="resume-section">
+                <h3 style="margin-bottom: 1.5rem;">Education</h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4>Post Graduate Diploma in Management (PGDM)</h4>
+                    <p class="company-name">Great Lakes Institute of Management | 2025 - 2027</p>
+                </div>
+                <div>
+                    <h4>B.Tech in Artificial Intelligence & Data Science</h4>
+                    <p class="company-name">Easwari Engineering College | 2020 - 2024</p>
+                    <p class="date">CGPA: 8.22</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+            <!-- Experience Short -->
+            <div class="resume-section">
+                <h3 class="typewriter">Experience</h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4>Data Scientist</h4>
+                    <p class="company-name">L&T Realty | Dec 2024 - Jun 2025</p>
+                </div>
+                <div>
+                    <h4>Internship Trainee</h4>
+                    <p class="company-name">Zigma Technologies | Nov 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Nitish Kumar P. All rights reserved.</p>
+    </footer>
+
+    <script src="components.js" defer></script>
+    <script src="particles.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

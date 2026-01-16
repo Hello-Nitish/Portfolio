@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More | Nitish Kumar P</title>
+    <meta name="description"
+        content="Explore more sections of Nitish Kumar P's portfolio including Resume, Blogs, Education, and Volunteering.">
+    <meta property="og:title" content="More | Nitish Kumar P">
+    <meta property="og:description"
+        content="Explore more sections of Nitish Kumar P's portfolio including Resume, Blogs, Education, and Volunteering.">
+    <meta property="og:image" content="assets/profile-new.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://hello-nitish.github.io/menu.html">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Nitish Kumar P, Portfolio Menu, Resume, Blogs, Education, Volunteering, Navigation">
+    <meta name="author" content="Nitish Kumar P">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hello-nitish.github.io/menu.html">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hello-nitish.github.io/menu.html">
+    <meta property="twitter:title" content="More | Nitish Kumar P">
+    <meta property="twitter:description"
+        content="Explore more sections of Nitish Kumar P's portfolio including Resume, Blogs, Education, and Volunteering.">
+    <meta property="twitter:image" content="https://hello-nitish.github.io/assets/profile-new.png">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Interactive Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-logo">NK.</a>
+
+    <!-- Floating Search Button (Mobile) -->
+    <a href="blogs.html" class="floating-search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </a>
+
+    <!-- Floating Dock Navigation -->
+    <div id="navigation-container"></div>
+
+    <!-- Menu Grid -->
+    <section class="container reveal"
+        style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
+        <h1 class="section-title typewriter" style="text-align: center; margin-bottom: 3rem;">Explore More</h1>
+        <div class="cert-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+
+            <!-- Resume Link -->
+            <a href="resume.html" style="text-decoration: none;">
+                <div class="glass-card"
+                    style="height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary);">📄</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Resume & Video</h3>
+                    <p style="color: var(--text-secondary);">View my professional resume and watch a quick video
+                        introduction.</p>
+                </div>
+            </a>
+
+            <!-- Blogs Link -->
+            <a href="blogs.html" style="text-decoration: none;">
+                <div class="glass-card"
+                    style="height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary);">🎯</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Goals & Blogs</h3>
+                    <p style="color: var(--text-secondary);">Read about my future aspirations and technical insights.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Education Link -->
+            <a href="education.html" style="text-decoration: none;">
+                <div class="glass-card"
+                    style="height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary);">🎓</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Education</h3>
+                    <p style="color: var(--text-secondary);">View my academic qualifications and achievements.</p>
+                </div>
+            </a>
+
+            <!-- Volunteering Link -->
+            <a href="volunteering.html" style="text-decoration: none;">
+                <div class="glass-card"
+                    style="height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-primary);">🤝</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Volunteering</h3>
+                    <p style="color: var(--text-secondary);">Explore my leadership roles and community involvement.</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Nitish Kumar P. All rights reserved.</p>
+    </footer>
+
+    <script src="components.js" defer></script>
+    <script src="particles.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,855 @@
+#roadmap {
+    position: relative;
+    padding: 4rem 0;
+    overflow: hidden;
+    min-height: 2100px;
+    /* Balanced Height */
+}
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 2100px;
+    /* Balanced Height */
+    margin: 0 auto;
+}
+
+/* --- Glowing Path --- */
+.timeline-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* CRITICAL: Must inherit full container height (2100px) */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.timeline-path svg {
+    width: 100%;
+    height: 100%;
+    /* Ensure SVG fills the entire path container */
+}
+
+.path-line {
+    fill: none;
+    stroke: rgba(56, 189, 248, 0.6);
+    stroke-width: 3px;
+    /* Enhanced visibility */
+    stroke-dasharray: 10, 10;
+    stroke-linecap: round;
+}
+
+.path-blur {
+    fill: none;
+    stroke: rgba(56, 189, 248, 0.8);
+    stroke-width: 10px;
+    filter: blur(12px);
+    opacity: 0.6;
+    animation: pulsePath 4s infinite alternate;
+}
+
+/* Show desktop path by default, hide mobile path */
+.desktop-path {
+    display: block;
+}
+
+.mobile-path {
+    display: none;
+}
+
+@keyframes pulsePath {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+/* --- Wormholes (Interstellar Black Hole Style) --- */
+.wormhole {
+    position: absolute;
+    width: 100px;
+    /* Balanced Size */
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Event Horizon (Black Core) */
+.wormhole::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    z-index: 2;
+}
+
+/* Accretion Disk (Swirling Light) */
+.wormhole::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            transparent 0%,
+            rgba(255, 200, 150, 0.1) 10%,
+            rgba(255, 255, 255, 0.8) 45%,
+            #fff 50%,
+            rgba(255, 255, 255, 0.8) 55%,
+            rgba(100, 200, 255, 0.1) 90%,
+            transparent 100%);
+    animation: spinWormhole 8s linear infinite;
+    filter: blur(4px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.wormhole.start {
+    top: 2%;
+    left: 10%;
+}
+
+.wormhole.end {
+    top: 99%;
+    /* Pushed down for better flow */
+    left: 60%;
+}
+
+@keyframes spinWormhole {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Planet Nodes --- */
+.planet-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.planet-node:hover {
+    z-index: 50;
+}
+
+/* Planet Sphere (High Fidelity) */
+.planet {
+    width: 45px;
+    /* Balanced Standard */
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Atmospheric Glow (Outer) */
+.planet::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 12px currentColor;
+    opacity: 0.4;
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+
+.planet-node:hover .planet::before {
+    opacity: 0.9;
+}
+
+/* Terminator Line (Day/Night Shadow) */
+.planet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, transparent 40%, rgba(0, 0, 0, 0.8) 85%, #000 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* --- Celestial Body Styles (Restructured) --- */
+
+/* 1. Type: Planet (Education) - Earth-like */
+.type-planet {
+    background: radial-gradient(circle at 40% 40%, #00b0ff, #005f9e, #001e3c);
+    box-shadow:
+        inset -8px -8px 12px rgba(0, 0, 0, 0.7),
+        /* Deep shadow */
+        inset 2px 2px 5px rgba(255, 255, 255, 0.4),
+        /* Highlight */
+        0 0 15px rgba(0, 150, 255, 0.4);
+    /* Atmosphere Glow */
+    overflow: hidden;
+}
+
+/* Continent & Cloud Texture */
+.type-planet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image:
+        /* Clouds */
+        radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 25%),
+        radial-gradient(ellipse at 20% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 30%),
+        /* Landmasses */
+        radial-gradient(circle at 35% 55%, rgba(56, 142, 60, 0.8) 0%, transparent 20%),
+        radial-gradient(circle at 65% 35%, rgba(76, 175, 80, 0.7) 0%, transparent 25%);
+    filter: blur(1px);
+    opacity: 0.9;
+}
+
+/* 2. Type: Moon (Internships/Jobs) - Rocky & Cratered */
+.type-moon {
+    background: radial-gradient(circle at 35% 35%, #e2e8f0, #94a3b8, #334155);
+    box-shadow:
+        inset -5px -5px 10px rgba(0, 0, 0, 0.9),
+        0 0 8px rgba(148, 163, 184, 0.3);
+}
+
+/* Craters */
+.type-moon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image:
+        radial-gradient(circle at 30% 60%, rgba(0, 0, 0, 0.3) 15%, #cbd5e1 16%, transparent 18%),
+        /* Big Crater */
+        radial-gradient(circle at 70% 30%, rgba(0, 0, 0, 0.2) 10%, #cbd5e1 11%, transparent 13%),
+        /* Med Crater */
+        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.1) 5%, transparent 7%);
+    /* Small Crater */
+    opacity: 0.8;
+}
+
+/* 3. Type: Dwarf Planet (POR) - Mars/Iron-rich */
+.type-dwarf {
+    background: radial-gradient(circle at 40% 40%, #fdba74, #ea580c, #7c2d12);
+    box-shadow:
+        inset -6px -6px 12px rgba(0, 0, 0, 0.8),
+        0 0 12px rgba(234, 88, 12, 0.5);
+    /* Dusty Glow */
+}
+
+/* Surface Bands / Ice Caps */
+.type-dwarf::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            /* Ice Cap North */
+            transparent 20%,
+            rgba(0, 0, 0, 0.1) 40%,
+            /* Band */
+            transparent 60%,
+            rgba(255, 255, 255, 0.2) 100%
+            /* Ice Cap South */
+        );
+    filter: blur(0.5px);
+}
+
+/* 4. Type: Satellite (Achievements) - Voyager/Mechanical Style */
+.type-satellite {
+    /* Use a square-ish or distinct shape? Let's keep circle base but modify appearance */
+    border-radius: 50%;
+    /* Keep circular container for consistency, but inner look changes */
+    background: radial-gradient(circle at 30% 30%, #fcd34d, #b45309);
+    /* Gold Core */
+    width: 28px;
+    /* Balanced */
+    height: 28px;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+}
+
+/* Voyager Solar Panels */
+.type-satellite::before,
+.type-satellite::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to bottom, #1e293b, #334155);
+    border: 1px solid #94a3b8;
+    z-index: -1;
+}
+
+/* Wings configuration */
+.type-satellite::before {
+    width: 140%;
+    height: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.type-satellite::after {
+    width: 30%;
+    height: 140%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    display: none;
+    /* Just side wings for Voyager look */
+}
+
+/* Antenna / Dish */
+.type-satellite .planet-shadow {
+    display: none;
+    /* No shadow on the satellite itself since it's emissive/metallic */
+}
+
+/* Specific size adjustments */
+.planet.type-planet.large {
+    width: 55px;
+    height: 55px;
+}
+
+.planet.type-moon.large {
+    width: 48px;
+    height: 48px;
+}
+
+/* Moons shouldn't be huge */
+.planet.type-moon.small {
+    width: 35px;
+    height: 35px;
+}
+
+.planet.type-dwarf {
+    width: 38px;
+    height: 38px;
+}
+
+.planet.type-satellite {
+    width: 28px;
+    height: 28px;
+}
+
+/* Hover Effects */
+.planet-node:hover .type-satellite {
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.9);
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* --- Compact Info Labels --- */
+.planet-info {
+    position: absolute;
+    width: max-content;
+    max-width: 200px;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    text-align: left;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    /* Stronger shadow since no bg */
+
+    /* Reset Text Blur */
+    filter: none;
+    opacity: 1;
+    z-index: 20;
+    /* Ensure it's above the path */
+}
+
+/* Positions */
+.info-right {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    margin-left: 0.8rem;
+}
+
+.info-left {
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 0.8rem;
+}
+
+/* Connectors */
+.info-right::before,
+.info-left::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.info-right::before {
+    right: 100%;
+}
+
+.info-left::before {
+    left: 100%;
+}
+
+/* Hover */
+.planet-node:hover .planet-info {
+    background: transparent;
+    backdrop-filter: none;
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+.planet-node:hover .info-right {
+    transform: translateY(-50%) translateX(3px);
+}
+
+.planet-node:hover .info-left {
+    transform: translateY(-50%) translateX(-3px);
+}
+
+
+/* Typography - Simplified */
+.stage-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    display: none;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.planet-info h3 {
+    font-size: 0.9rem;
+    /* Readable Title */
+    color: #fff;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.planet-info p {
+    font-size: 0.75rem;
+    /* Readable Body */
+    color: #cbd5e1;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Standard property for compatibility */
+    /* Limit lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.date-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 99px;
+    background: rgba(56, 189, 248, 0.1);
+    color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* --- ISS / Satellite --- */
+.iss-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 5;
+    pointer-events: none;
+    will-change: transform;
+    display: none;
+    /* Hidden by default (Desktop) */
+}
+
+.iss-icon {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6));
+    animation: floatingSatellite 6s ease-in-out infinite;
+}
+
+/* Solar Panel Glint */
+.solar-panel {
+    fill: #60a5fa;
+    fill-opacity: 0.8;
+}
+
+/* Blinking Light */
+.blink-light {
+    animation: blinkRed 2s infinite;
+}
+
+@keyframes blinkRed {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 10px #ef4444;
+    }
+}
+
+@keyframes floatingSatellite {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+/* --- Tablet Breakpoint (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #roadmap {
+        padding: 3rem 1rem;
+        min-height: 1600px;
+    }
+
+    .timeline-container {
+        transform: scale(0.7);
+        transform-origin: top center;
+        max-width: 100%;
+        height: 1500px;
+    }
+
+    .planet-info {
+        padding: 0.75rem 1rem;
+    }
+
+    .planet-info h3 {
+        font-size: 0.9rem;
+    }
+
+
+}
+
+/* --- Mobile Optimization & Compatibility --- */
+@media (max-width: 768px) {
+    #roadmap {
+        padding: 4rem 0 0;
+        /* Reduced bottom padding */
+        /* FIXED: Calculate min-height based on scaled container */
+        /* Formula: (container_height × scale) + padding */
+        /* 2100px × 0.33 = 693px. Buffer to 700px */
+        min-height: 700px;
+        overflow: visible;
+        /* FIXED: Allow bottom nodes to be visible */
+        overflow-x: hidden;
+        /* Keep horizontal overflow hidden */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -5rem;
+        /* Pull up following content */
+    }
+
+    /* Scale down and center the cosmic path UI */
+    .timeline-container {
+        transform: scale(0.33);
+        transform-origin: top center;
+        margin: 0 auto;
+        width: 1000px;
+        max-width: none;
+        position: relative;
+        left: 0;
+        /* No offset needed with mobile-specific path */
+        overflow: visible;
+        flex-shrink: 0;
+        /* CRITICAL: Prevent flexbox from squashing the 1000px container */
+    }
+
+    /* Use desktop path for all devices (mobile uses same layout, just scaled) */
+    .desktop-path {
+        display: block;
+    }
+
+    .mobile-path {
+        display: none;
+    }
+
+    /* Keep cosmic path visible on mobile */
+    .timeline-path,
+    .wormhole {
+        display: block;
+        overflow: visible;
+    }
+
+    .rocket-container {
+        display: none !important;
+        /* Explicitly requested to remove from mobile */
+    }
+
+    /* CRITICAL: Ensure SVG maintains full height in mobile */
+    .timeline-path {
+        height: 2100px !important;
+        /* Must match .timeline-container height */
+    }
+
+    .timeline-path svg {
+        overflow: visible;
+        height: 2100px !important;
+        /* Explicit height to prevent collapse */
+    }
+
+    /* Remove scroll hint since it's now centered */
+    #roadmap::after {
+        display: none;
+    }
+
+    /* Adjust planet sizing for better mobile touch */
+    .planet-node {
+        z-index: 5;
+    }
+
+    .planet {
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Info boxes slightly more compact */
+    .planet-info {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .planet-info h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .planet-info p {
+        font-size: 0.7rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .date-tag {
+        font-size: 0.55rem;
+        padding: 2px 6px;
+    }
+
+    .stage-label {
+        font-size: 0.5rem;
+    }
+
+    .rocket-container {
+        /* Position handled via JS */
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        will-change: transform;
+        transform-origin: center center;
+    }
+
+    /* Ensure wormhole stays visible on mobile */
+    .wormhole.end {
+        left: 60%;
+    }
+}
+
+/* Performance Optimizations */
+.rocket-container,
+.wormhole::before {
+    will-change: transform;
+}
+
+.planet {
+    will-change: transform, box-shadow;
+}
+
+/* --- Timeline Modal Popup --- */
+.timeline-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.timeline-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.timeline-modal-content {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 1.5rem;
+    box-shadow:
+        0 0 40px rgba(56, 189, 248, 0.15),
+        0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-modal-overlay.active .timeline-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: rgba(239, 68, 68, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-step {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    margin-bottom: 1rem;
+}
+
+.modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.modal-subtitle {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.modal-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    margin-bottom: 1.5rem;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.modal-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #0f172a;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.modal-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+}
+
+/* Enhanced hover preview tooltip */
+.planet-node:hover .planet-info {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile modal */
+@media (max-width: 768px) {
+    .timeline-modal-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        max-height: 85vh;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-close {
+        width: 48px;
+        height: 48px;
+    }
+}
