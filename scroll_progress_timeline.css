@@ -1,0 +1,202 @@
+/* Left-Aligned Scroll Progress Timeline
+   =====================================================
+   A vertical progress line on the far left of content sections
+   that fills as the user scrolls, with node markers for each card.
+   
+   Theme Colors (inherited from site):
+   - Primary: #38bdf8 (Sky Blue)
+   - Secondary: #818cf8 (Indigo)
+   - Track: rgba(255, 255, 255, 0.1)
+*/
+
+/* --- Wrapper Container --- */
+.scroll-timeline-wrapper {
+    position: relative;
+    padding-left: 60px;
+    /* Space for the timeline on the left */
+}
+
+/* --- Progress Line Container (Track) --- */
+.scroll-progress-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    z-index: 5;
+}
+
+/* --- Background Track (Muted) --- */
+.scroll-progress-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* --- Active Fill (Animated on Scroll) --- */
+.scroll-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* CRITICAL: Starts at 0, grows via JS only */
+    background: linear-gradient(to bottom, #38bdf8, #818cf8);
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+    transition: height 0.05s linear;
+}
+
+/* --- Timeline Nodes (Icon Bubbles) --- */
+/* Fix 2: Icon centered on vertical track using transform */
+.scroll-timeline-node {
+    position: absolute;
+    left: 22px;
+    /* Center of 4px track at left: 20px = 20 + 2 = 22px */
+    width: 28px;
+    height: 28px;
+    background: #0f172a;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /* Center both horizontally and vertically on the point */
+    z-index: 10;
+    /* Sits on top of the line, hiding it behind */
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-timeline-node i {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease;
+}
+
+.scroll-timeline-node.active {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.scroll-timeline-node.active i {
+    color: #fff;
+}
+
+/* --- Horizontal Connector Lines (Bridge) --- */
+/* Fix 1: Bridge snaps to icon center, no gap */
+.timeline-connector {
+    position: absolute;
+    /* Left edge touches icon border: center(22px) + radius(14px) = 36px */
+    left: 36px;
+    height: 2px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 4;
+    /* Below icon */
+    transform: translateY(-50%);
+    /* Center vertically on the same top position as icon */
+    transition: all 0.4s ease;
+}
+
+.timeline-connector.active {
+    background: linear-gradient(to right, #38bdf8, rgba(56, 189, 248, 0.4));
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Card Container (with node positioning) --- */
+.scroll-timeline-wrapper .glass-card {
+    position: relative;
+}
+
+/* --- Tablet Responsive --- */
+@media (max-width: 768px) {
+    .scroll-timeline-wrapper {
+        padding-left: 50px;
+    }
+
+    .scroll-progress-line {
+        left: 15px;
+        width: 3px;
+    }
+
+    .scroll-timeline-node {
+        left: 16.5px;
+        /* 15 + 1.5 = center of 3px track */
+        width: 24px;
+        height: 24px;
+    }
+
+    .scroll-timeline-node i {
+        font-size: 10px;
+    }
+
+    .scroll-timeline-node.active {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .timeline-connector {
+        left: 28.5px;
+        /* 16.5 + 12 (radius) */
+        width: 12px;
+    }
+}
+
+/* --- Mobile Responsive (HIDE bridge lines) --- */
+@media (max-width: 480px) {
+    .scroll-timeline-wrapper {
+        padding-left: 40px;
+    }
+
+    .scroll-progress-line {
+        left: 10px;
+        width: 2px;
+    }
+
+    .scroll-timeline-node {
+        left: 11px;
+        /* 10 + 1 = center of 2px track */
+        width: 20px;
+        height: 20px;
+    }
+
+    .scroll-timeline-node i {
+        font-size: 8px;
+    }
+
+    .scroll-timeline-node.active {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* Fix 4: Completely hide bridge on mobile */
+    .timeline-connector {
+        display: none !important;
+    }
+}
+
+/* --- Very Small Screens --- */
+@media (max-width: 360px) {
+    .scroll-timeline-wrapper {
+        padding-left: 35px;
+    }
+
+    .scroll-progress-line {
+        left: 8px;
+    }
+
+    .scroll-timeline-node {
+        left: 9px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .scroll-timeline-node i {
+        font-size: 7px;
+    }
+}
