@@ -50,6 +50,7 @@ const searchIndex = [
     { title: 'Let\'s Connect', url: 'lets_connect.html', category: 'Page', icon: '🤙', snippet: 'Contact information, resume download, and video introduction', keywords: 'contact resume connect email phone reach message form cv download video' },
 
     // --- Experience Details ---
+    { title: 'Business Management Trainee @ Incorp Advisory', url: 'experience.html', category: 'Experience', icon: '💼', snippet: 'Tech Transformation, AI automation, KYC/eSign, OCR APIs & Copilot evaluation at Incorp Advisory', keywords: 'incorp advisory business management trainee tech transformation ai automation kyc copilot ocr' },
     { title: 'Data Scientist @ L&T Realty', url: 'experience.html', category: 'Experience', icon: '💼', snippet: 'Voice bots and process automation using ML and data analytics at L&T Realty, Chennai', keywords: 'l&t realty data scientist voice bots process automation machine learning chennai current' },
     { title: 'Intern @ Zigma Technologies', url: 'experience.html', category: 'Experience', icon: '💼', snippet: 'Apache Superset, IPFS, and system administration on Ubuntu servers', keywords: 'zigma technologies intern apache superset ipfs system administration ubuntu decentralized' },
     { title: 'Intern @ FSS', url: 'experience.html', category: 'Experience', icon: '💼', snippet: 'Banking data anomaly detection and customer segmentation at Financial Software Systems', keywords: 'fss financial software systems intern banking data anomaly detection customer segmentation' },
@@ -62,8 +63,9 @@ const searchIndex = [
     { title: '10th Grade - Infant Jesus', url: 'education.html', category: 'Education', icon: '🎓', snippet: 'Secondary education at Infant Jesus Matriculation School (2018)', keywords: 'infant jesus matriculation school 10th grade secondary' },
 
     // --- Skills ---
-    { title: 'Python Programming', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Proficient in Python for data science, ML, and automation', keywords: 'python programming language coding scripting' },
-    { title: 'Machine Learning', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Experience with ML algorithms, deep learning, and model deployment', keywords: 'machine learning ml deep learning tensorflow keras neural networks' },
+    { title: 'Generative AI', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Building LLM workflows, prompt engineering, and GenAI solutions', keywords: 'gen ai generative ai llm prompt artificial intelligence' },
+    { title: 'Vibe Coding', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'AI-assisted rapid software development and prototyping', keywords: 'vibe coding ai coding assistant prototyping rapid development' },
+    { title: 'Agentic AI', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Designing autonomous AI agents and workflow orchestration', keywords: 'agentic ai ai agents workflow automation autonomous systems' },
     { title: 'Data Analytics', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Business analytics, data visualization, and statistical analysis', keywords: 'data analytics business analytics tableau visualization statistics' },
     { title: 'Product Management', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Product lifecycle management, user research, and strategy', keywords: 'product management pm lifecycle strategy roadmap user research' },
     { title: 'Supply Chain Management', url: 'index.html', category: 'Skill', icon: '🛠️', snippet: 'Operations, demand forecasting, and inventory management', keywords: 'supply chain management operations demand forecasting inventory logistics' },
