@@ -215,6 +215,10 @@ function initTimelineModal() {
         'Certified': {
             step: 'Step 16', subtitle: 'Continuous Learning', date: 'Ongoing',
             description: 'Acquiring certifications in cloud technologies and data science.', link: 'achievements.html'
+        },
+        'Business Trainee': {
+            step: 'Step 17', subtitle: 'Incorp Advisory Services (Tech Transformation)', date: 'Apr 2026 - Jun 2026',
+            description: 'Evaluated AI automation, KYC/eSign, OCR APIs, and MS Copilot training partners.', link: 'experience.html'
         }
     };
 
@@ -299,9 +303,7 @@ function initISSAnimation() {
         const elapsed = timestamp - startTime;
         const progress = (elapsed % duration) / duration;
 
-        if (window.innerWidth <= 768) {
-            updatePosition(progress, desktopPath);
-        }
+        updatePosition(progress, desktopPath);
         animationFrameId = requestAnimationFrame(animate);
     }
 
@@ -309,11 +311,9 @@ function initISSAnimation() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                if (window.innerWidth <= 768) {
-                    if (!animationFrameId) {
-                        startTime = null;
-                        animationFrameId = requestAnimationFrame(animate);
-                    }
+                if (!animationFrameId) {
+                    startTime = null;
+                    animationFrameId = requestAnimationFrame(animate);
                 }
             } else {
                 if (animationFrameId) {
