@@ -43,6 +43,25 @@
      -moz-osx-font-smoothing: grayscale;
  }
 
+ /* --- Skip Link (Accessibility) --- */
+ .skip-link {
+     position: absolute;
+     top: -100px;
+     left: 1rem;
+     background: #38bdf8;
+     color: #02040a;
+     padding: 0.5rem 1rem;
+     border-radius: 8px;
+     font-weight: 600;
+     z-index: 10000;
+     text-decoration: none;
+     transition: top 0.2s ease;
+ }
+
+ .skip-link:focus {
+     top: 1rem;
+ }
+
  #bg-canvas {
      position: fixed;
      top: 0;

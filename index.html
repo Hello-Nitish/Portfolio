@@ -19,7 +19,7 @@
     <meta property="og:title" content="Nitish Kumar P | Portfolio">
     <meta property="og:description"
         content="Portfolio of Nitish Kumar P, a PGDM candidate and Data Scientist specializing in Business Strategy and AI.">
-    <meta property="og:image" content="https://hello-nitish.github.io/assets/nitish_pic.webp">
+    <meta property="og:image" content="https://nitishkumar.dev/assets/nitish_pic.webp">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="timeline.css" media="print" onload="this.media='all'">
     <noscript>
@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://hello-nitish.github.io/">
+    <link rel="canonical" href="https://nitishkumar.dev/">
 
     <!-- SEO Meta Tags -->
     <meta name="keywords"
@@ -43,11 +43,11 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://hello-nitish.github.io/">
+    <meta property="og:url" content="https://nitishkumar.dev/">
     <meta property="og:title" content="Nitish Kumar P | MBA Candidate & Data Scientist">
     <meta property="og:description"
         content="PGDM '27 at Great Lakes. AI/ML specialist bridging business strategy with data science. 6+ internships including L&T Realty, FSS, Zigma Tech.">
-    <meta property="og:image" content="https://hello-nitish.github.io/assets/profile-new.webp">
+    <meta property="og:image" content="https://nitishkumar.dev/assets/nitish_pic.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="article:published_time" content="2025-01-10">
@@ -55,11 +55,11 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hello-nitish.github.io/">
+    <meta property="twitter:url" content="https://nitishkumar.dev/">
     <meta property="twitter:title" content="Nitish Kumar P | MBA Candidate & Data Scientist">
     <meta property="twitter:description"
         content="Portfolio of Nitish Kumar P, an MBA (PGDM) candidate at GLIM Chennai and Data Scientist specializing in Business Strategy and AI.">
-    <meta property="twitter:image" content="https://hello-nitish.github.io/assets/profile-new.webp">
+    <meta property="twitter:image" content="https://nitishkumar.dev/assets/nitish_pic.webp">
 
     <!-- JSON-LD Structured Data (AEO Optimized) -->
     <!-- Person Schema (Enhanced) -->
@@ -69,9 +69,14 @@
       "@type": "Person",
       "name": "Nitish Kumar P",
       "jobTitle": "PGDM Candidate & Product Management Professional",
-      "url": "http://www.nitishkumar.online/",
-      "image": "http://www.nitishkumar.online/assets/profile-new.webp",
+      "url": "https://nitishkumar.dev/",
+      "image": "https://nitishkumar.dev/assets/nitish_pic.webp",
       "description": "Management professional bridging Business Strategy with AI & Data Science. Currently pursuing PGDM at Great Lakes Institute of Management.",
+      "sameAs": [
+        "https://github.com/Hello-Nitish",
+        "https://www.linkedin.com/in/nitishkumar-glim/",
+        "https://x.com/its_nitish_vibe"
+      ],
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
@@ -149,6 +154,7 @@
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
@@ -168,8 +174,7 @@
     <!-- Floating Dock Navigation -->
     <div id="navigation-container"></div>
 
-
-
+    <main id="main">
     <!-- Hero Section (Bold Typography Style) -->
     <section class="container hero reveal">
         <div class="hero-main">
@@ -630,14 +635,15 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Timeline Modal Popup -->
-    <div id="timeline-modal" class="timeline-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div id="timeline-modal" class="timeline-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title-heading">
         <div class="timeline-modal-content glass-card">
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <div class="modal-body">
                 <span class="modal-step"></span>
-                <h2 class="modal-title"></h2>
+                <h2 id="modal-title-heading" class="modal-title"></h2>
                 <p class="modal-subtitle"></p>
                 <span class="modal-date"></span>
                 <p class="modal-description"></p>

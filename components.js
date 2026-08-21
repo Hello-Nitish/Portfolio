@@ -177,10 +177,11 @@ class NavigationComponent {
 
         const navHTML = `
             <div class="floating-dock-container reveal active">
-                <nav class="floating-dock">
+                <nav class="floating-dock" role="navigation" aria-label="Main navigation">
                     ${navItems.map(item => `
                         <a href="${item.href}" 
                            class="dock-item ${this.isActive(item.href) ? 'active' : ''}" 
+                           ${this.isActive(item.href) ? 'aria-current="page"' : ''}
                            aria-label="${item.label}">
                             ${item.icon}
                         </a>
